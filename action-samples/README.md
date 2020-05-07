@@ -5,8 +5,8 @@ This repository contains samples of Jahia Actions declared with OSGi
 ## How to test it
 
 - Deploy the module on your server
-- Activate this module on a site
-- Then call on the actions
+- Activate the module on a site
+- Then call one of the actions
 
 Simple action:
 ```shell script
