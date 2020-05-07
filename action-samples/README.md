@@ -1,6 +1,6 @@
 # Jahia Action with OSGi
 
-This repository contains samples of Jahia Actions declared with OSGi
+This repository contains samples of Jahia Action declared with OSGi
 
 ## How to test it
 
