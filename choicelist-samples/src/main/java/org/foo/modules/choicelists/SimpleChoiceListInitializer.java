@@ -1,13 +1,11 @@
-package org.foo.modules.actions;
+package org.foo.modules.choicelists;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.jahia.services.content.nodetypes.ExtendedPropertyDefinition;
 import org.jahia.services.content.nodetypes.initializers.ChoiceListValue;
 import org.jahia.services.content.nodetypes.initializers.ModuleChoiceListInitializer;
 import org.osgi.service.component.annotations.*;
-import org.tuckey.web.filters.urlrewrite.Run;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
