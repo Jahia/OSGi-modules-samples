@@ -1,0 +1,8 @@
+<nt = 'http://www.jcp.org/jcr/nt/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+<mix='http://www.jcp.org/jcr/mix/1.0'>
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+
+[jnt:testChoiceList] > jnt:content, jmix:basicContent, jmix:editorialContent
+ - value1(string, choicelist[customChoiceList1])
+ - value2(string, choicelist[customChoiceList2])
