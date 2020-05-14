@@ -4,6 +4,9 @@ This repository contains samples of modules to create Jahia Actions, Filters, et
 
 - [Action samples, contains samples for Jahia Action](./action-samples)
 - [Filter samples, contains samples for Jahia Filter](./filter-samples)
+- [Background Job samples, contains samples for Background Job](./background-job-samples)
+- [ChoiceList samples, contains samples for Jahia ChoiceList Initializer and Renderer](./choicelist-samples)
+- [Service samples, contains samples to create and use OSGi services between modules](./service-samples)
 
 ## How to use OSGi annotations in your module
 
