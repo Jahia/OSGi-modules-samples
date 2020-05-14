@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>service-samples</artifactId>
+        <groupId>org.foo.modules</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>service-declaration-samples</artifactId>
+    <packaging>bundle</packaging>
+    <name>Jahia OSGi Service Declaration samples</name>
+    <description>This is a module with simple OSGi service declaration samples</description>
+
+    <properties>
+        <!-- This property is important we declare that we want to export our package that contains our services, -->
+        <!-- we could provide multiple package if needed to do so just separate them with a comma. -->
+        <!-- Also if you look at the structure of our packages you will notice that the implementation of our services -->
+        <!-- are under a package named internal so even if we export the parent package the internal package will not be exported -->
+        <export-package>org.foo.modules.services</export-package>
+    </properties>
+</project>
