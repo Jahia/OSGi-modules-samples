@@ -8,6 +8,7 @@ import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
 import org.jahia.services.render.URLResolver;
 import org.json.JSONObject;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -19,12 +20,13 @@ import java.util.Map;
 /**
  * This action is using an OSGi service from the module service-declaration-samples
  */
-@Component(service = Action.class, immediate = true)
+@Component(service = Action.class)
 public class ConsumeOSGiServiceAction extends Action {
 
     private SimpleService simpleService;
 
-    public ConsumeOSGiServiceAction() {
+    @Activate
+    public void activate() {
         setName("consumeOSGiService");
         setRequireAuthenticatedUser(false);
     }

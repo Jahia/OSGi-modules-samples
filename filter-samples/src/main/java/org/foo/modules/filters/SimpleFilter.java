@@ -7,6 +7,7 @@ import org.jahia.services.render.filter.AbstractFilter;
 import org.jahia.services.render.filter.RenderChain;
 import org.jahia.services.render.filter.RenderFilter;
 import org.jetbrains.annotations.NotNull;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
 import java.util.List;
@@ -14,12 +15,13 @@ import java.util.List;
 /**
  * This is the minimum required setup to declare a Jahia Filter using OSGi
  */
-@Component(service = RenderFilter.class, immediate = true)
+@Component(service = RenderFilter.class)
 public class SimpleFilter extends AbstractFilter {
 
     private String headScript;
 
-    public SimpleFilter() {
+    @Activate
+    public void activate() {
         setPriority(3);
         setApplyOnEditMode(true);
         setSkipOnAjaxRequest(true);

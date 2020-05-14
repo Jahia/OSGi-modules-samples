@@ -9,6 +9,7 @@ import org.jahia.services.render.Resource;
 import org.jahia.services.render.URLResolver;
 import org.jahia.services.templates.JahiaTemplateManagerService;
 import org.json.JSONObject;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -21,12 +22,13 @@ import java.util.Map;
 /**
  * This action is using a service from Jahia through OSGi
  */
-@Component(service = Action.class, immediate = true)
+@Component(service = Action.class)
 public class AdvancedAction extends Action {
 
     private JahiaTemplateManagerService jahiaTemplateManagerService;
 
-    public AdvancedAction() {
+    @Activate
+    public void activate() {
         setName("advancedAction");
         setRequireAuthenticatedUser(true);
     }
