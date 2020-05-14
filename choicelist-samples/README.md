@@ -1,4 +1,4 @@
-# Jahia Action with OSGi
+# Jahia ChoiceList with OSGi
 
 This repository contains samples of Jahia ChoiceListInitializer declared with OSGi
 
