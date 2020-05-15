@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
  *
  * @author dgaillard
  */
-@Component(service = BackgroundJob.class, immediate = true)
+@Component(immediate = true)
 public class TestBackgroundJob extends BackgroundJob {
     private static Logger logger = LoggerFactory.getLogger(TestBackgroundJob.class);
 
