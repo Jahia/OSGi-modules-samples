@@ -8,6 +8,7 @@ import org.jahia.services.render.filter.RenderChain;
 import org.jahia.services.render.filter.RenderFilter;
 import org.jahia.services.sites.JahiaSitesService;
 import org.jetbrains.annotations.NotNull;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
@@ -16,14 +17,15 @@ import java.util.List;
 /**
  * This filter is using a service from Jahia through OSGi
  */
-@Component(service = RenderFilter.class, immediate = true)
+@Component(service = RenderFilter.class)
 public class AdvancedFilter extends AbstractFilter {
 
     private JahiaSitesService jahiaSitesService;
 
     private String headScript;
 
-    public AdvancedFilter() {
+    @Activate
+    public void activate() {
         setPriority(4);
         setApplyOnEditMode(true);
         setSkipOnAjaxRequest(true);

@@ -7,6 +7,7 @@ import org.jahia.services.render.RenderContext;
 import org.jahia.services.render.Resource;
 import org.jahia.services.render.URLResolver;
 import org.json.JSONObject;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,10 +18,11 @@ import java.util.Map;
 /**
  * This is the minimum required setup to declare a Jahia Action using OSGi
  */
-@Component(service = Action.class, immediate = true)
+@Component(service = Action.class)
 public class SimpleAction extends Action {
 
-    public SimpleAction() {
+    @Activate
+    public void activate() {
         setName("simpleAction");
         setRequireAuthenticatedUser(false);
     }
