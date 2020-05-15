@@ -1,6 +1,6 @@
-# Jahia Background Job with OSGi
+# Jahia Interceptor with OSGi
 
-This repository contains samples of Background Job declared with OSGi
+This repository contains samples of Interceptor declared with OSGi
 
 ## How to test it
 
