@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>jahia-modules</artifactId>
+        <groupId>org.jahia.modules</groupId>
+        <version>8.0.0.0</version>
+    </parent>
+
+    <artifactId>cache-key-part-generator-samples</artifactId>
+    <groupId>org.foo.modules</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>bundle</packaging>
+    <name>Jahia Cache Key Part Generator samples</name>
+    <description>This is a module with Cache Key Part Generator samples</description>
+
+    <scm>
+        <connection>scm:git:git@github.com:Jahia/OSGi-modules-samples.git</connection>
+        <developerConnection>scm:git:git@github.com:Jahia/OSGi-modules-samples.git</developerConnection>
+        <url>https://github.com/Jahia/OSGi-modules-samples</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <_dsannotations>*</_dsannotations>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -7,7 +7,8 @@ This repository contains samples of modules to create Jahia Actions, Filters, et
 - [Background Job samples, contains samples for Background Job](./background-job-samples)
 - [ChoiceList samples, contains samples for Jahia ChoiceList Initializer and Renderer](./choicelist-samples)
 - [Service samples, contains samples to create and use OSGi services between modules](./service-samples)
-- [Interceptor samples, contains samples to create and use Jahia Interceptor](./interceptor-samples)
+- [Interceptor samples, contains samples for Jahia Interceptor](./interceptor-samples)
+- [Cache Key Part Generator samples, contains samples for Jahia Cache Key Part Generator](./interceptor-samples)
 
 ## How to use OSGi annotations in your module
 
