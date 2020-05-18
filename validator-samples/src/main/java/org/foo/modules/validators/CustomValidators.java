@@ -33,7 +33,7 @@ import java.util.Map;
  *
  * @author yousria
  */
-@Component(service = JCRNodeValidatorDefinition.class, immediate = true)
+@Component(service = JCRNodeValidatorDefinition.class)
 public class CustomValidators extends JCRNodeValidatorDefinition {
     /**
      * Register custom validator for generic content nodetype
