@@ -1,0 +1,6 @@
+<jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<jnt = 'http://www.jahia.org/jahia/nt/1.0'>
+
+[jnt:testContent] > jnt:content, jmix:editorialContent, jmix:structuredContent
+ - longValue (string) mandatory
+ - notEmptyValue (string) mandatory
