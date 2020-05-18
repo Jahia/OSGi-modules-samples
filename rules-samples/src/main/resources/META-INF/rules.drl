@@ -1,0 +1,28 @@
+package org.foo.modules.rules
+
+// list any import classes here.
+import org.jahia.services.content.rules.*
+import org.jahia.services.content.JCRContentUtils
+import org.jahia.services.content.JCRValueWrapper
+import org.slf4j.Logger
+
+global User user
+global Service service
+global Logger logger
+global JCRContentUtils jcrUtils
+global Service1 service1
+global Service2 service2
+
+rule "Hello bigText"
+    when
+>        node: AddedNodeFact ( types contains "jnt:bigText" )
+    then
+>        service1.hello(node);
+end
+
+rule "Hello contentList"
+    when
+>        node: AddedNodeFact (types contains "jnt:contentList")
+    then
+>        service2.hello(node);
+end
