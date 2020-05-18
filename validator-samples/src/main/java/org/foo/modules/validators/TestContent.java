@@ -23,32 +23,10 @@
  */
 package org.foo.modules.validators;
 
-import org.jahia.services.content.JCRNodeWrapper;
-import org.jahia.services.content.decorator.validation.JCRNodeValidator;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.osgi.service.component.annotations.Component;
-
 /**
  *
  * @author yousria
  */
-@Component(immediate = true)
-public class TestNodeValidator implements JCRNodeValidator {
-
-    private JCRNodeWrapper node;
-
-    public TestNodeValidator(JCRNodeWrapper node) {
-        this.node = node;
-    }
-
-    @Length(min = 1000)
-    public String getLongValue() {
-        return node.getPropertyAsString("longValue");
-    }
-
-    @NotEmpty
-    public String getNotEmptyValue() {
-        return node.getPropertyAsString("notEmptyValue");
-    }
+public class TestContent {
+    public static final String NODETYPE = "jnt:testContent";
 }
