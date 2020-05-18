@@ -33,7 +33,7 @@ import org.osgi.service.component.annotations.Component;
  *
  * @author yousria
  */
-@Component(immediate = true)
+@Component
 public class TestNodeValidator implements JCRNodeValidator {
 
     private JCRNodeWrapper node;
