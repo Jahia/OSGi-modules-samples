@@ -18,7 +18,7 @@ response=$(curl -s -X GET http://localhost:8080/yourContextIfOne/en/sites/youSit
 
 Advanced action:
 ```shell script
-response=$(curl -s - root:root1234 -X GET http://localhost:8080/yourContextIfOne/en/sites/youSiteKey.advancedAction.do -H 'accept: application/json') && echo $response
+response=$(curl -s -u root:root1234 -X GET http://localhost:8080/yourContextIfOne/en/sites/youSiteKey.advancedAction.do -H 'accept: application/json') && echo $response
 
 ## Output something like >
 ## {"message":"Hello Jahia there are X modules on this site","modules":[]}
