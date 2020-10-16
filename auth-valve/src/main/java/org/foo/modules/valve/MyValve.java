@@ -23,7 +23,7 @@ import javax.servlet.http.HttpSession;
 import static org.jahia.params.valves.LoginEngineAuthValveImpl.OK;
 import static org.jahia.params.valves.LoginEngineAuthValveImpl.VALVE_RESULT;
 
-@Component(service = {Valve.class, LoginUrlProvider.class}, immediate = true)
+@Component(service = {Valve.class, LoginUrlProvider.class, LogoutUrlProvider.class}, immediate = true)
 public class MyValve extends BaseAuthValve implements LoginUrlProvider, LogoutUrlProvider{
     private Pipeline authPipeline;
     private JahiaUserManagerService userManagerService;
