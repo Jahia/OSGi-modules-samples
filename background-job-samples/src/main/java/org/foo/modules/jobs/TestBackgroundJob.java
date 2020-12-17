@@ -2,11 +2,15 @@ package org.foo.modules.jobs;
 
 import org.jahia.services.scheduler.BackgroundJob;
 import org.jahia.services.scheduler.SchedulerService;
+import org.jahia.settings.SettingsBean;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Reference;
-import org.quartz.*;
+import org.quartz.JobDetail;
+import org.quartz.JobExecutionContext;
+import org.quartz.SimpleTrigger;
+import org.quartz.Trigger;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -25,13 +29,17 @@ public class TestBackgroundJob extends BackgroundJob {
     @Activate
     public void start() throws Exception {
         jobDetail = BackgroundJob.createJahiaJob("Simple background job made declared with OSGi", TestBackgroundJob.class);
-        Trigger trigger = new SimpleTrigger("testBackgroundJob_trigger", jobDetail.getGroup(), SimpleTrigger.REPEAT_INDEFINITELY, 3000);
-        schedulerService.getScheduler().scheduleJob(jobDetail, trigger);
+        if (schedulerService.getAllJobs(jobDetail.getGroup()).isEmpty() && SettingsBean.getInstance().isProcessingServer()) {
+            Trigger trigger = new SimpleTrigger("testBackgroundJob_trigger", jobDetail.getGroup(), SimpleTrigger.REPEAT_INDEFINITELY, 3000);
+            schedulerService.getScheduler().scheduleJob(jobDetail, trigger);
+        }
     }
 
     @Deactivate
     public void stop() throws Exception {
-        schedulerService.getScheduler().deleteJob(jobDetail.getName(), jobDetail.getGroup());
+        if (!schedulerService.getAllJobs(jobDetail.getGroup()).isEmpty() && SettingsBean.getInstance().isProcessingServer()) {
+            schedulerService.getScheduler().deleteJob(jobDetail.getName(), jobDetail.getGroup());
+        }
     }
 
     @Override
