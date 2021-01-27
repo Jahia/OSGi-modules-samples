@@ -1,0 +1,17 @@
+{
+  "packageName" : "org.foo.modules.workflows",
+  "name" : "sample-workflow",
+  "type" : "publish",
+  "canBeUsedForDefault" : true,
+  "defaultPriority" : 1,
+  "permissions" : {
+    "start": "publication-start",
+    "review1": "publication-review",
+    "review2": "publication-review"
+  },
+  "forms" : {
+    "start": "jnt:testWorkflowForm",
+    "review1": "jnt:testWorkflowForm",
+    "review2": "jnt:testWorkflowForm"
+  }
+}
