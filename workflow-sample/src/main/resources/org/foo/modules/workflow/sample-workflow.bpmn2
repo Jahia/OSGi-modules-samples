@@ -8,7 +8,7 @@
   <bpmn2:itemDefinition id="WorkflowDefinitionItemDefinition" isCollection="false" itemKind="Physical" structureRef="org.jahia.services.workflow.WorkflowDefinition"/>
   <bpmn2:itemDefinition id="IntegerItemDefinition" isCollection="false" itemKind="Physical" structureRef="Integer"/>
   <bpmn2:itemDefinition id="WorfklowVariableItemDefinition" isCollection="false" itemKind="Physical" structureRef="org.jahia.services.workflow.WorkflowVariable"/>
-  <bpmn2:process id="sample-workflow" drools:packageName="org.jahia.modules.workflows.scheduled" name="sample-workflow" isExecutable="true">
+  <bpmn2:process id="sample-workflow" name="sample-workflow" isExecutable="true">
     <bpmn2:extensionElements>
       <drools:import xsi:type="xs:anyType" name="java.util.List"/>
       <drools:import xsi:type="xs:anyType" name="java.util.Locale"/>
