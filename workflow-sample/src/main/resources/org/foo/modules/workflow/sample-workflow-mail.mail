@@ -1,0 +1,32 @@
+to: #if ($userNotificationEmail) $userNotificationEmail #end
+to-users: assignableFor(review)
+subject: Publication request by ${PrincipalViewHelper.getFullName($currentUser)} for ${site.getDisplayableName()}
+text:Hello,
+
+A sample workflow has been started on ${date.format("short",
+    "short",$submissionDate,$locale)} by ${PrincipalViewHelper.getFullName($currentUser)}, on the following items :
+#foreach( $node in $nodes )
+    #if( $velocityCount <= 20)
+        ${node.getDisplayableName()}
+    #end
+#end
+
+html:
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+    </style>
+</head>
+
+
+<body>
+    A sample workflow has been started on ${date.format("short",
+        "short",$submissionDate,$locale)} by ${PrincipalViewHelper.getFullName($currentUser)}, on the following items :
+    #foreach( $node in $nodes )
+        #if( $velocityCount <= 20)
+            ${node.getDisplayableName()}
+        #end
+    #end
+</body>
