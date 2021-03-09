@@ -2,6 +2,13 @@
 
 This repository contains samples of Jahia Action declared with OSGi
 
+To activate the OSGi annotations do not forget to add this instruction in the configuration of the maven-bundle-plugin of your pom.xml: 
+```xml                    
+<instructions>
+  <_dsannotations>*</_dsannotations>
+</instructions>
+```
+
 ## How to test it
 
 - Deploy the module on your server
