@@ -18,8 +18,8 @@ import java.util.stream.Collectors;
 /**
  * A simple configurable ChoiceList initializer
  */
-@Component(service = {ModuleChoiceListInitializer.class, ModuleChoiceListRenderer.class}, scope=ServiceScope.BUNDLE)
-public class SimpleChoiceListInitializer extends AbstractChoiceListRenderer implements ModuleChoiceListRenderer, ModuleChoiceListInitializer {
+@Component(service = {ModuleChoiceListInitializer.class}, scope=ServiceScope.BUNDLE)
+public class SimpleChoiceListInitializer implements ModuleChoiceListInitializer {
 
     private String key;
     private LazyDynaMap values = new LazyDynaMap();
@@ -45,23 +45,6 @@ public class SimpleChoiceListInitializer extends AbstractChoiceListRenderer impl
 
     public DynaBean getValues() {
         return values;
-    }
-
-    @Override
-    public String getStringRendering(RenderContext context, JCRPropertyWrapper propertyWrapper)
-            throws RepositoryException {
-        String value;
-        if (propertyWrapper.isMultiple()) {
-            value = propertyWrapper.getValues()[0].getString();
-        } else {
-            value = propertyWrapper.getValue().getString();
-        }
-        return getStringRendering(context, null, value);
-    }
-
-    @Override
-    public String getStringRendering(Locale locale, ExtendedPropertyDefinition extendedPropertyDefinition, Object o) throws RepositoryException {
-        return (String) values.get(o.toString());
     }
 
     @Override
