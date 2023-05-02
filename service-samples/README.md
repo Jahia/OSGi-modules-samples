@@ -8,8 +8,10 @@ This repository contains samples of OSGi service
 - Activate the module `service-consumer-samples` on a site
 - Then call the action
 ```shell script
-response=$(curl -s -X GET http://localhost:8080/yourContextIfOne/en/sites/youSiteKey.consumeOSGiService.do -H 'accept: application/json') && echo $response
+response=$(curl -s -X POST http://localhost:8080/en/sites/SITEKEY.consumeOSGiService.do -H 'accept: application/json') && echo $response
+```
+Output should be something like : 
 
-## Output >
-## {"message":"Hello Jahia!"}
+```shell script
+{"message":"Hello Jahia! Home directory=/home/tomcat"}
 ```
