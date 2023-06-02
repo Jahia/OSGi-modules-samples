@@ -19,17 +19,17 @@ public class MetatypeConfigExample {
 
     private static final Logger logger = LoggerFactory.getLogger(MetatypeConfigExample.class);
 
-    @ObjectClassDefinition(name = "Metatype configuration", description = "An example of configuration with metatype")
+    @ObjectClassDefinition(name = "%metatypeConfiguration", description = "%metatypeConfigurationDescription", localization = "OSGI-INF/l10n/metatypeExample")
     public @interface Config {
-        @AttributeDefinition(name = "Simple key", defaultValue = "nokey", description = "Simple key value")
+        @AttributeDefinition(name = "%simpleKey", defaultValue = "nokey", description = "%simpleKeyDescription")
         String key() default "nokey";
 
         // Dropdown
-        @AttributeDefinition(name = "Dropdown", options = { @Option(label = "Option 1", value = "option1"),
-                @Option(label = "Option 2", value = "option 2"), @Option(label = "Option 3", value = "option3") })
+        @AttributeDefinition(name = "%dropdown", options = { @Option(label = "%dropdown.option1", value = "option1"),
+                @Option(label = "%dropdown.option2", value = "option 2"), @Option(label = "%dropdown.option3", value = "option3") })
         String dropdown() default "option1";
 
-        @AttributeDefinition(name = "Values.test1", defaultValue = "none", description="Key with . character in it")
+        @AttributeDefinition(name = "%values.test1", defaultValue = "none", description="%values.test1.description")
         String values_test1() default "none";
     }
 
