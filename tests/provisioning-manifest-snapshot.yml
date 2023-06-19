@@ -1,0 +1,2 @@
+- installBundle: mvn:org.foo.modules/login-provider
+  autoStart: true

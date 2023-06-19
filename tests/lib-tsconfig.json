@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "rootDir": "./cypress",
+    "outDir": "./dist",
+    "module": "commonjs",
+    "declaration": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "types": [
+      "@jahia/cypress",
+      "cypress-iframe",
+      "cypress-wait-until"
+    ]
+  },
+  "include": [
+    "./cypress/page-object/**/*"
+  ],
+   "exclude": [ "node_modules" ]
+}
