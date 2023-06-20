@@ -7,15 +7,15 @@
     <parent>
         <artifactId>jahia-modules</artifactId>
         <groupId>org.jahia.modules</groupId>
-        <version>8.1.2.0</version>
+        <version>8.0.3.0</version>
+        <relativePath />
     </parent>
 
-    <artifactId>config-samples</artifactId>
+    <artifactId>osgi-modules-samples</artifactId>
     <groupId>org.foo.modules</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>bundle</packaging>
-    <name>Jahia OSGi Configuration samples</name>
-    <description>This is a module with Jahia OSGi Configuration samples</description>
+    <packaging>pom</packaging>
+    <name>OSGi modules samples</name>
 
     <scm>
         <connection>scm:git:git@github.com:Jahia/OSGi-modules-samples.git</connection>
@@ -36,18 +36,21 @@
         </repository>
     </repositories>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <_dsannotations>*</_dsannotations>
-                    </instructions>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <modules>
+        <module>action-samples</module>
+        <module>auth-valve</module>
+        <module>background-job-samples</module>
+        <module>cache-key-part-generator-samples</module>
+        <module>choicelist-samples</module>
+        <module>config-samples</module>
+        <module>filter-samples</module>
+        <module>interceptor-samples</module>
+        <module>login-provider</module>
+        <module>rules-samples</module>
+        <module>service-samples</module>
+        <module>servlet-filter-samples</module>
+        <module>system-events-samples</module>
+        <module>validator-samples</module>
+        <module>workflow-sample</module>
+    </modules>
 </project>

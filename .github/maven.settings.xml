@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<settings>
+    <profiles>
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.host.url>${env.SONAR_URL}</sonar.host.url>
+                <sonar.login>${env.SONAR_TOKEN}</sonar.login>
+            </properties>
+        </profile>
+    </profiles>
+
+    <activeProfiles>
+        <activeProfile>sonar</activeProfile>
+    </activeProfiles>
+
+    <servers>
+        <server>
+            <id>jahia-public</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+        <server>
+            <id>jahia-snapshots</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+        <server>
+            <id>staging-repository</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>
+    </servers>
+</settings>

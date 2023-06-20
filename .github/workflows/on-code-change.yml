@@ -1,0 +1,82 @@
+# This workflow is triggered every time a change is pushed to any branches
+# Github actions command reference: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
+name: On Code Change (PR)
+
+# The workflow could also be triggered on PRs
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  static-analysis:
+    name: Static Analysis (linting, vulns)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Jahia/jahia-modules-action/static-analysis@v2
+        with:
+          node_version: 14
+          auditci_level: critical
+          max_warning: 2
+
+  build:
+    name: Build Module
+    runs-on: ubuntu-latest
+    container:
+      image: jahia/cimg-mvn-cache:ga_cimg_openjdk_8.0.312-node
+      credentials:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: jahia/jahia-modules-action/build@v2
+        with:
+          nexus_username: ${{ secrets.NEXUS_USERNAME }}
+          nexus_password: ${{ secrets.NEXUS_PASSWORD }}
+          module_id: OSGi-modules-samples
+
+  integration-tests-standalone:
+    name: Integration Tests (Standalone)
+    needs: build
+    runs-on: self-hosted
+    timeout-minutes: 45
+    steps:
+      - uses: jahia/jahia-modules-action/helper@v2
+      - uses: KengoTODA/actions-setup-docker-compose@main
+        with:
+          version: '1.29.2'
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 'lts/*'
+      - uses: actions/checkout@v3
+      - uses: jahia/jahia-modules-action/integration-tests@v2
+        with:
+          module_id: OSGi-modules-samples
+          tests_manifest: provisioning-manifest-build.yml
+          jahia_image: jahia/jahia-discovery-dev:8-SNAPSHOT
+          should_use_build_artifacts: true
+          should_skip_testrail: true
+          github_artifact_name: pat-standalone-artifacts-${{ github.run_number }}
+          jahia_license: ${{ secrets.JAHIA_LICENSE_8X_FULL }}
+          docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
+          docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          nexus_username: ${{ secrets.NEXUS_USERNAME }}
+          nexus_password: ${{ secrets.NEXUS_PASSWORD }}
+          tests_report_name: Test report (Standalone)
+          testrail_username: ${{ secrets.TESTRAIL_USERNAME }}
+          testrail_password: ${{ secrets.TESTRAIL_PASSWORD }}
+          incident_pagerduty_api_key: ${{ secrets.INCIDENT_PAGERDUTY_API_KEY }}
+          incident_pagerduty_reporter_email: ${{ secrets.INCIDENT_PAGERDUTY_REPORTER_EMAIL }}
+          incident_pagerduty_reporter_id: ${{ secrets.INCIDENT_PAGERDUTY_REPORTER_ID }}
+          incident_google_spreadsheet_id: ${{ secrets.INCIDENT_GOOGLE_SPREADSHEET_ID }}
+          incident_google_client_email: ${{ secrets.INCIDENT_GOOGLE_CLIENT_EMAIL }}
+          incident_google_api_key_base64: ${{ secrets.INCIDENT_GOOGLE_PRIVATE_KEY_BASE64 }}
+          zencrepes_secret: ${{ secrets.ZENCREPES_WEBHOOK_SECRET }}
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Tests Report (Standalone)
+          path: tests/artifacts/results/xml_reports/*.xml
+          reporter: java-junit
+          fail-on-error: 'false'

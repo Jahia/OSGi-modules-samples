@@ -1,0 +1,32 @@
+version: '3.6'
+services:
+    jahia:
+        image: '${JAHIA_IMAGE}'
+        container_name: jahia
+        environment:
+            - SUPER_USER_PASSWORD=${SUPER_USER_PASSWORD}        
+            - MAX_RAM_PERCENTAGE=95
+        ports:
+            - '8080:8080'
+        extra_hosts:
+            - jahia:127.0.0.1
+        networks:
+            - stack   
+    # Cypress container
+    cypress:
+        image: '${TESTS_IMAGE}'
+        # https://github.com/cypress-io/cypress/issues/350
+        ipc: host
+        container_name: cypress
+        depends_on:
+            - jahia
+        environment:
+            - MANIFEST=${MANIFEST}
+            - SUPER_USER_PASSWORD=${SUPER_USER_PASSWORD}
+            - JAHIA_URL=http://jahia:8080
+            - NEXUS_USERNAME=${NEXUS_USERNAME}
+            - NEXUS_PASSWORD=${NEXUS_PASSWORD}
+        networks:
+            - stack
+networks:
+    stack:
