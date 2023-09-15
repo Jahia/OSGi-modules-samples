@@ -1,6 +1,7 @@
 name: Nightly Test run
 
 on:
+  workflow_dispatch:  
   schedule:
     - cron:  '0 0 * * *'
 
@@ -25,13 +26,15 @@ jobs:
       - uses: jahia/jahia-modules-action/integration-tests@v2
         with:
           module_id: OSGi-modules-samples
+          timeout_minutes: 20
           tests_manifest: provisioning-manifest-snapshot.yml
+          jahia_image: ${{ matrix.jahia_image }}
           should_use_build_artifacts: false
           should_skip_artifacts: true
           should_skip_notifications: false
           should_skip_testrail: false
           should_skip_zencrepes: false
-          github_artifact_name: pat-artifacts-${{ matrix.jahia_image }}-${{ github.run_number }}
+          github_artifact_name: osgi-sample-artifacts-${{ strategy.job-index }}-${{ github.run_number }}
           bastion_ssh_private_key: ${{ secrets.BASTION_SSH_PRIVATE_KEY_JAHIACI }}
           jahia_license: ${{ secrets.JAHIA_LICENSE_8X_FULL }}
           docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
