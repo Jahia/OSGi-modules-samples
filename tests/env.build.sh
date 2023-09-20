@@ -17,8 +17,11 @@ if [ ! -d ./artifacts ]; then
   mkdir -p ./artifacts
 fi
 
-if [[ -e ../target ]]; then
-  find .. -name target -exec bash -c 'cp {}/*-SNAPSHOT.jar ./artifacts/' \;
-fi
+cd ..
+mvn install
+cd -
+
+find .. -name target -exec bash -c 'cp {}/*-SNAPSHOT.jar ./artifacts/' \;
 
 docker build -t ${TESTS_IMAGE} .
+
