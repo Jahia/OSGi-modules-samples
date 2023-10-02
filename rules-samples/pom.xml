@@ -24,6 +24,10 @@
         <tag>HEAD</tag>
     </scm>
 
+    <properties>
+        <jahia.plugin.version>6.9</jahia.plugin.version>
+    </properties>
+
     <repositories>
         <repository>
             <id>jahia-public</id>
