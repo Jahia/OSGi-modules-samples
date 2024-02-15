@@ -1,6 +1,6 @@
-FROM cypress/browsers:node-18.14.1-chrome-110.0.5481.96-1-ff-109.0-edge-110.0.1587.41-1
+FROM cypress/browsers:node-20.10.0-chrome-118.0.5993.88-1-ff-118.0.2-edge-118.0.2088.46-1
 
-RUN apt-get update && apt-get install -y jq
+RUN apt-get update && apt-get install -y jq curl
 
 RUN adduser --disabled-password jahians
 
