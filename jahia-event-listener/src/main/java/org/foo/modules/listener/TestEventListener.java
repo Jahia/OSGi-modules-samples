@@ -12,8 +12,17 @@ import java.util.EventObject;
 public class TestEventListener implements JahiaEventListener<BaseLoginEvent> {
     private final static Logger logger = LoggerFactory.getLogger(TestEventListener.class);
 
+    private static final Class<BaseLoginEvent>[] ALLOWED_EVENT_TYPES = new Class[]{BaseLoginEvent.class};
+
     @Override
     public void onEvent(EventObject event) {
-        logger.info("Received event : "+event);
+        // We can perform this cast because we said we only wanted to receive BaseLoginEvent and subclasses of it
+        BaseLoginEvent baseLoginEvent = (BaseLoginEvent) event;
+        logger.info("Received login event : class={} user={}", event.getClass().getName(), baseLoginEvent.getJahiaUser().getUserKey());
+    }
+
+    @Override
+    public Class<BaseLoginEvent>[] getEventTypes() {
+        return ALLOWED_EVENT_TYPES;
     }
 }
