@@ -45,7 +45,7 @@ jobs:
         with:
           module_id: OSGi-modules-samples
           tests_manifest: provisioning-manifest-build.yml
-          jahia_image: jahia/jahia-discovery-dev:8-SNAPSHOT
+          jahia_image: jahia/jahia-ee-dev:8-SNAPSHOT
           should_use_build_artifacts: true
           github_artifact_name: samples-standalone-artifacts-${{ github.run_number }}
           bastion_ssh_private_key: ${{ secrets.BASTION_SSH_PRIVATE_KEY_JAHIACI }}
