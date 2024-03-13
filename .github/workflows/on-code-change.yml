@@ -53,7 +53,7 @@ jobs:
         with:
           module_id: OSGi-modules-samples
           tests_manifest: provisioning-manifest-build.yml
-          jahia_image: jahia/jahia-discovery-dev:8-SNAPSHOT
+          jahia_image: jahia/jahia-ee-dev:8-SNAPSHOT
           should_use_build_artifacts: true
           should_skip_testrail: true
           github_artifact_name: pat-standalone-artifacts-${{ github.run_number }}

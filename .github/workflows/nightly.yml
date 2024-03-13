@@ -24,7 +24,7 @@ jobs:
       - uses: jahia/jahia-modules-action/integration-tests@v2
         with:
           module_id: OSGi-modules-samples
-          jahia_image: jahia/jahia-discovery-dev:8-SNAPSHOT
+          jahia_image: jahia/jahia-ee-dev:8-SNAPSHOT
           incident_service: OSGi-modules-samples-JahiaSN          
           timeout_minutes: 20
           tests_manifest: provisioning-manifest-snapshot.yml
@@ -78,7 +78,7 @@ jobs:
       - uses: jahia/jahia-modules-action/integration-tests@v2
         with:
           module_id: OSGi-modules-samples
-          jahia_image: jahia/jahia-discovery:8
+          jahia_image: jahia/jahia-ee:8
           incident_service: OSGi-modules-samples-JahiaRL        
           timeout_minutes: 20
           tests_manifest: provisioning-manifest-snapshot.yml
