@@ -49,7 +49,7 @@ public class SimpleChoiceListInitializer implements ModuleChoiceListInitializer 
 
     @Override
     public List<ChoiceListValue> getChoiceListValues(ExtendedPropertyDefinition extendedPropertyDefinition, String s, List<ChoiceListValue> list, Locale locale, Map<String, Object> map) {
-        Set<Map.Entry<String,String>> set = values.getMap().entrySet();
-        return set.stream().map(entry -> new ChoiceListValue(entry.getValue(), entry.getKey())).collect(Collectors.toList());
+        Set<Map.Entry<String, Object>> set = values.getMap().entrySet();
+        return set.stream().map(entry -> new ChoiceListValue(entry.getValue().toString(), entry.getKey())).collect(Collectors.toList());
     }
 }

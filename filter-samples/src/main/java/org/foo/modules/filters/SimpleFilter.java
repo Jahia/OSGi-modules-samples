@@ -6,7 +6,6 @@ import org.jahia.services.render.Resource;
 import org.jahia.services.render.filter.AbstractFilter;
 import org.jahia.services.render.filter.RenderChain;
 import org.jahia.services.render.filter.RenderFilter;
-import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 
@@ -48,7 +47,6 @@ public class SimpleFilter extends AbstractFilter {
      * @param output    Original output to modify
      * @return          Modified output
      */
-    @NotNull
     private String enhanceOutput(String output) {
         Source source = new Source(output);
         OutputDocument outputDocument = new OutputDocument(source);

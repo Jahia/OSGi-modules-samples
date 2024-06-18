@@ -7,7 +7,6 @@ import org.jahia.services.render.filter.AbstractFilter;
 import org.jahia.services.render.filter.RenderChain;
 import org.jahia.services.render.filter.RenderFilter;
 import org.jahia.services.sites.JahiaSitesService;
-import org.jetbrains.annotations.NotNull;
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
@@ -57,7 +56,6 @@ public class AdvancedFilter extends AbstractFilter {
      * @param output    Original output to modify
      * @return          Modified output
      */
-    @NotNull
     private String enhanceOutput(String output) {
         Source source = new Source(output);
         OutputDocument outputDocument = new OutputDocument(source);

@@ -1,12 +1,7 @@
 package org.foo.modules.rules;
 
-import org.jahia.api.Constants;
-import org.jahia.api.templates.JahiaTemplateManagerService;
 import org.jahia.services.content.DefaultEventListener;
-import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.component.annotations.Reference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,28 +13,9 @@ import javax.jcr.observation.EventListener;
 @Component(service = EventListener.class, immediate = true)
 public class CustomJCREventListener extends DefaultEventListener {
 
-    Logger logger = LoggerFactory.getLogger(CustomJCREventListener.class);
-    private JahiaTemplateManagerService templateManagerService;
+    private static final Logger logger = LoggerFactory.getLogger(CustomJCREventListener.class);
 
     String[] nodetypes = new String[]{"jnt:bigText", "jnt:news"};
-
-    @Reference(service = JahiaTemplateManagerService.class)
-    public void setTemplateManagerService(JahiaTemplateManagerService templateManagerService) {
-        this.templateManagerService = templateManagerService;
-    }
-
-    @Activate
-    public void start() {
-        logger.info("Registering CustomJCREventListener in {}", templateManagerService);
-        setWorkspace(Constants.EDIT_WORKSPACE);
-        templateManagerService.getTemplatePackageRegistry().handleJCREventListener(this, true);
-    }
-
-    @Deactivate
-    public void stop() {
-        logger.info("Unregistering CustomJCREventListener from {}", templateManagerService);
-        templateManagerService.getTemplatePackageRegistry().handleJCREventListener(this, false);
-    }
 
     @Override
     public int getEventTypes() {
