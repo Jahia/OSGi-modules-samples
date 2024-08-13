@@ -38,6 +38,22 @@ private DataSource dataSource;
 
 As mentioned before, the filter used to retrieve the service is based on the datasource name property. 
 
+## Usage
+
+Compile and deploy the module to a running Jahia container.
+
+```bash
+mvn clean install jahia:deploy -Djahia.deploy.targetContainerName=jahia
+```
+
+Use the bundle configuration tool to provide database connection information. (http://localhost:8080/tools/osgi/console/configMgr) : 
+
+img:![Bundle Configuration](./images/bundle-configuration.png)
+
+You can also use the sample config file and deploy it in the Jahia'Karaf configuration folder : /var/jahia/karaf/etc/org.jahia.modules.sample.datasource.cfg
+
+Notice: You may use environment variables in the configuration fields to avoid storing sensitive information in the configuration file.
+
 ## Test datasource connection
 
 You can test the datasource in the JCR Console using the following groovy script : 
