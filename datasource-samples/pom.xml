@@ -7,15 +7,21 @@
     <parent>
         <artifactId>jahia-modules</artifactId>
         <groupId>org.jahia.modules</groupId>
-        <version>8.0.3.0</version>
-        <relativePath />
+        <version>8.2.0.0</version>
     </parent>
 
-    <artifactId>osgi-modules-samples</artifactId>
+    <artifactId>datasource-samples</artifactId>
     <groupId>org.foo.modules</groupId>
     <version>1.0.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
-    <name>OSGi modules samples</name>
+    <packaging>bundle</packaging>
+    <name>Jahia Datasource samples</name>
+    <description>This is a module with Jahia Datasource samples</description>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <scm>
         <connection>scm:git:git@github.com:Jahia/OSGi-modules-samples.git</connection>
@@ -23,6 +29,14 @@
         <url>https://github.com/Jahia/OSGi-modules-samples</url>
         <tag>HEAD</tag>
     </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+    </dependencies>
 
     <repositories>
         <repository>
@@ -36,23 +50,19 @@
         </repository>
     </repositories>
 
-    <modules>
-        <module>action-samples</module>
-        <module>auth-valve</module>
-        <module>background-job-samples</module>
-        <module>cache-key-part-generator-samples</module>
-        <module>choicelist-samples</module>
-        <module>config-samples</module>
-        <module>filter-samples</module>
-        <module>interceptor-samples</module>
-        <module>jahia-event-listener</module>
-        <module>login-provider</module>
-        <module>rules-samples</module>
-        <module>service-samples</module>
-        <module>servlet-filter-samples</module>
-        <module>system-events-samples</module>
-        <module>validator-samples</module>
-        <module>workflow-sample</module>
-        <module>datasource-samples</module>
-    </modules>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <_dsannotations>*</_dsannotations>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
