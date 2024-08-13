@@ -52,8 +52,6 @@ img:![Bundle Configuration](./images/bundle-configuration.png)
 
 You can also use the sample config file and deploy it in the Jahia'Karaf configuration folder : /var/jahia/karaf/etc/org.jahia.modules.sample.datasource.cfg
 
-Notice: You may use environment variables in the configuration fields to avoid storing sensitive information in the configuration file.
-
 ## Test datasource connection
 
 You can test the datasource in the JCR Console using the following groovy script : 
