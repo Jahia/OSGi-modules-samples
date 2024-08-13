@@ -33,12 +33,15 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+/**
+ * Sample OSGI service that consumes a DataSource produced and published by the DataSourceFactory
+ */
 @Component(name = "SampleDataSourceConsumer")
 public class SampleDataSourceConsumer {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SampleDataSourceConsumer.class.getName());
 
-    @Reference(target = "(&(objectclass=javax.sql.DataSource)(datasource.name=sampleDS))")
+    @Reference(target = "(&(objectclass=javax.sql.DataSource)(datasource.name=defaultDS))")
     private DataSource dataSource;
 
     @Activate

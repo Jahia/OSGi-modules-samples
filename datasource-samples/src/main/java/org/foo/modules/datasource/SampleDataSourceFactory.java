@@ -41,13 +41,17 @@ import java.sql.SQLException;
 import java.util.Dictionary;
 import java.util.Hashtable;
 
+/**
+ * Sample DataSourceFactory that creates a DataSource based on MariaDB Pool and publish it as an OSGI Service.
+ * The datasource configuration can be modified and the factory will handle the datasource creation and update.
+ */
 @Component(name = "SampleDataSourceFactory", configurationPid = "org.foo.modules.datasource.sample", immediate = true)
 @Designate(ocd = SampleDataSourceFactory.DataSourceConfig.class)
 public class SampleDataSourceFactory {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SampleDataSourceFactory.class.getName());
 
-    @ObjectClassDefinition(name = "DataSourceConfiguration", description = "The DataSource Configuration")
+    @ObjectClassDefinition(name = "Sample DataSource Configuration", description = "The Sample DataSource Configuration")
     public @interface DataSourceConfig {
         @AttributeDefinition(name = "Datasource Name", defaultValue = "defaultDS", description = "The DataSource Name")
         String name() default "defaultDS";
