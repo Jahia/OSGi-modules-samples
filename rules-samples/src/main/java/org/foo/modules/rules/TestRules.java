@@ -6,9 +6,8 @@ import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Reference;
 
 /**
- * Simple Background Job declared with OSGi
+ * Module global rules object to register custom OSGi services
  *
- * @author dgaillard
  */
 @Component(service = ModuleGlobalObject.class)
 public class TestRules extends ModuleGlobalObject {
