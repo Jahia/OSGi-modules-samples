@@ -7,7 +7,7 @@
     <parent>
         <artifactId>jahia-modules</artifactId>
         <groupId>org.jahia.modules</groupId>
-        <version>8.2.1.0-SNAPSHOT</version>
+        <version>8.2.1.0</version>
     </parent>
 
     <artifactId>rules-samples</artifactId>
