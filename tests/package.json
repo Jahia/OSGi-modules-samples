@@ -22,7 +22,7 @@
     "@cypress/code-coverage": "^3.9.5",
     "@cypress/webpack-preprocessor": "^5.4.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
-    "@jahia/cypress": "^3.12.0",
+    "@jahia/cypress": "^4.3.0",
     "@jahia/eslint-config": "^2.1.0",
     "@types/node": "^15.12.0",
     "@typescript-eslint/eslint-plugin": "^5.45.0",
