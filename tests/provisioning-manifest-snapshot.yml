@@ -1,4 +1,4 @@
-- addMavenRepository: 'https://devtools.jahia.com/nexus/content/groups/internal@id=jahia-internal@snapshots'
+- addMavenRepository: 'https://devtools.jahia.com/nexus/content/groups/internal/@id=jahia-internal@snapshots'
   username: ${env:NEXUS_USERNAME}
   password: ${env:NEXUS_PASSWORD}
 
