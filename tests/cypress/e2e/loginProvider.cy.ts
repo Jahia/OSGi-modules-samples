@@ -19,7 +19,7 @@ describe('Login/logout url provider', () => {
         cy.visit('/start');
         getJahiaVersion().then(jahiaVersion => {
             console.log(jahiaVersion);
-            if (compare(jahiaVersion.release.replace('-SNAPSHOT', ''), '8.2.2', '<')) {
+            if (compare(jahiaVersion.release.replace('-SNAPSHOT', ''), '8.2.3', '<')) {
                 console.log('Test using old style primaryNavMenuButton');
                 cy.get('[role="primary-nav-control"]').click();
                 cy.contains('Sign out').click();
