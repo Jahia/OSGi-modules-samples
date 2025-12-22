@@ -54,5 +54,6 @@
         <module>validator-samples</module>
         <module>workflow-sample</module>
         <module>datasource-samples</module>
+        <module>cache-control-sample</module>
     </modules>
 </project>
