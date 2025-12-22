@@ -2,6 +2,6 @@ name: "Cache Control Sample RuleSet"
 description: "Sample rule set to demonstrate how to customize client cache control behavior"
 rules:
   - "0.8;GET|HEAD;(?:/[^/]+)?/.*\\.actionCacheControl\\.do;private,no-cache,no-store,max-age=-6"
-  - "8.91;GET|HEAD;(?:/[^/]+)?/modules/client-cache-sample/img/.*;template:public-medium"
-  - "8.92;GET|HEAD;(?:/[^/]+)?/modules/client-cache-sample/js/.*;template:immutable"
+  - "8.91;GET|HEAD;(?:/[^/]+)?/modules/cache-control-sample/img/.*;template:public-medium"
+  - "8.92;GET|HEAD;(?:/[^/]+)?/modules/cache-control-sample/js/.*;template:immutable"
 
