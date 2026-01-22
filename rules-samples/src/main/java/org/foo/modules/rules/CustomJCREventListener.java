@@ -10,7 +10,7 @@ import javax.jcr.observation.Event;
 import javax.jcr.observation.EventIterator;
 import javax.jcr.observation.EventListener;
 
-@Component(service = EventListener.class, immediate = true)
+@Component(service = DefaultEventListener.class, immediate = true)
 public class CustomJCREventListener extends DefaultEventListener {
 
     Logger logger = LoggerFactory.getLogger(CustomJCREventListener.class);
