@@ -47,6 +47,7 @@ jobs:
           tests_manifest: provisioning-manifest-build.yml
           jahia_image: jahia/jahia-ee-dev:8-SNAPSHOT
           should_use_build_artifacts: true
+          github_token: ${{ secrets.GH_ISSUES_PRS_CHORES }}
           github_artifact_name: samples-standalone-artifacts-${{ github.run_number }}
           bastion_ssh_private_key: ${{ secrets.BASTION_SSH_PRIVATE_KEY_JAHIACI }}
           jahia_license: ${{ secrets.JAHIA_LICENSE_8X_FULL }}
