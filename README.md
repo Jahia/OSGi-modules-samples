@@ -11,6 +11,9 @@ This repository contains samples of modules to create Jahia Actions, Filters, et
 - [Interceptor samples, contains samples for Jahia Interceptor](./interceptor-samples)
 - [Cache Key Part Generator samples, contains samples for Jahia Cache Key Part Generator](./interceptor-samples)
 
+## GraphQL extensions 
+The code samples showing how to add GraphQL APIs can be found located directly in the [graphql-core repository](https://github.com/Jahia/graphql-core/tree/master/graphql-extension-example).
+
 ## How to use OSGi annotations in your module
 
 In order for the OSGi annotations to work in your module, you need to make sure that you have this tag `<_dsannotations>*</_dsannotations>` in the `maven-bundle-plugin` plugin instructions of your pom.xml:
