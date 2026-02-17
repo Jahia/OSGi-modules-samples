@@ -1,0 +1,11 @@
+sampleScope:
+  description: Can access to the sample API
+  metadata:
+    visible: true
+  constraints:
+    - user_permission: admin
+      path: /
+  auto_apply:
+    - always: true
+  grants:
+    - api: sampleApi
