@@ -1,3 +1,9 @@
+# This file is an example of a scope configuration file that can be used to define access control rules for an API in Jahia.
+# It defines a scope called "sampleScope" that grants access to the "sampleApi" API
+# for users with the "admin" permission.
+# The scope is automatically applied to all requests.
+# To go further and see more advanced configurations, please refer to the following page:
+#    https://academy.jahia.com/documentation/jahia-cms/jahia-8.2/developer/working-with-our-apis/security-service-and-filter
 sampleScope:
   description: Can access to the sample API
   metadata:
