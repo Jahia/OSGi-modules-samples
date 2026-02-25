@@ -3,7 +3,7 @@
 This repository contains samples of workflow registration.
 
 > [!WARNING]  
-> Custom workflows are now deprecated, and you should not base your module implementation on this sample.
+> As of Jahia 8.2.4.0, custom workflows are deprecated, and you should not base your module implementation on this sample.
 
 ## How to test it
 
