@@ -1,6 +1,9 @@
 # Jahia OSGi Workflow sample
 
-This repository contains samples of workflow registration
+This repository contains samples of workflow registration.
+
+> [!WARNING]  
+> As of Jahia 8.2.4.0, custom workflows are deprecated, and you should not base your module implementation on this sample.
 
 ## How to test it
 
