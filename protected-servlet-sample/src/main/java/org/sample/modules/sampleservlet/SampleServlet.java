@@ -17,6 +17,21 @@ import java.io.IOException;
 /**
  * Example servlet which is accessible for users having the scope sampleApi
  * This scope is automatically applied for user having the admin permission.
+ * 
+ * <p>Component properties:
+ * <ul>
+ *   <li><strong>service</strong>: Registers this component as both HttpServlet and Servlet services,
+ *       making it available to the OSGi HTTP service.</li>
+ *   <li><strong>alias=/sample</strong>: Maps this servlet to the URL path /modules/sample
+ *       (the /modules prefix is added by the Jahia framework).</li>
+ * </ul>
+ *
+ * <p>Available endpoints:
+ * <ul>
+ *   <li>/modules/sample/sayHello - Returns "Hello!" (requires sampleApi.sayHello permission)</li>
+ *   <li>/modules/sample/sayHi - Returns "Hi!" (requires sampleApi.sayHi permission)</li>
+ *   <li>/modules/sample/sayBye - Returns "Bye!" (requires sampleApi.sayBye permission)</li>
+ * </ul>
  */
 @Component(service = { javax.servlet.http.HttpServlet.class, javax.servlet.Servlet.class }, property = { "alias=/sample" })
 public class SampleServlet extends HttpServlet {
