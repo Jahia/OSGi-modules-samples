@@ -15,7 +15,7 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>bundle</packaging>
     <name>Jahia Workflow samples</name>
-    <description>This is a module with Workflow samples</description>
+    <description>This is a module with Workflow samples (deprecated!)</description>
 
     <repositories>
         <repository>
