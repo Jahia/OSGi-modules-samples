@@ -9,8 +9,6 @@ jobs:
   integration-tests-sn:
     name: Integration Tests (Jahia-SN)
     runs-on: self-hosted
-    strategy:
-      fail-fast: false
     timeout-minutes: 45
     steps:
       - uses: jahia/jahia-modules-action/helper@v2
@@ -64,8 +62,6 @@ jobs:
   integration-tests-rl:
     name: Integration Tests (Jahia-RL)
     runs-on: self-hosted
-    strategy:
-      fail-fast: false
     timeout-minutes: 45
     steps:
       - uses: jahia/jahia-modules-action/helper@v2
