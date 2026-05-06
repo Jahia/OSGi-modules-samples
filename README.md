@@ -12,7 +12,7 @@ This repository contains samples of modules to create Jahia Actions, Filters, et
 - [Cache Key Part Generator samples, contains samples for Jahia Cache Key Part Generator](./interceptor-samples)
 
 ## GraphQL extensions 
-The code samples showing how to add GraphQL APIs can be found located directly in the [graphql-core repository](https://github.com/Jahia/graphql-core/tree/master/graphql-extension-example).
+The code samples showing how to add GraphQL APIs can be found located directly in the [graphql-core repository](https://github.com/Jahia/graphql-core/tree/main/graphql-extension-example).
 
 ## How to use OSGi annotations in your module
 

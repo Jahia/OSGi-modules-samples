@@ -1,12 +1,12 @@
 # This workflow is triggered every time a change is pushed to any branches
 # Github actions command reference: https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-name: On merge to master
+name: On merge to main
 
 # The workflow could also be triggered on PRs
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
     tags-ignore:
       - '**'
 
@@ -25,7 +25,6 @@ jobs:
         with:
           nexus_username: ${{ secrets.NEXUS_USERNAME }}
           nexus_password: ${{ secrets.NEXUS_PASSWORD }}
-          module_id: OSGi-modules-samples
 
   integration-tests-standalone:
     name: Integration Tests (Standalone)
@@ -77,7 +76,7 @@ jobs:
   publish:
     name: Publish module
     needs: [integration-tests-standalone]
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     container:
       image: jahia/cimg-mvn-cache:ga_cimg_openjdk_11.0.20-node
