@@ -34,10 +34,14 @@ public class TestBackgroundJobRegistration {
         // Fixed name -> can be retrieved after restart
         jobDetail = new JobDetail(JOB_NAME, GROUP_NAME, TestBackgroundJob.class, false, true, false);
         jobDetail.setDescription("Simple background job registered with OSGi");
+        // After Jahia 8.2.4.0 the utility method BackgroundJob.createJahiaJob can be used as the following
+        // jobDetail = BackgroundJob.createJahiaJob(JOB_NAME, "Simple background job made declared with OSGi", TestBackgroundJob.class);
         if (SettingsBean.getInstance().isProcessingServer()) {
             // Delete the old job at startup if exists
             schedulerService.getScheduler().deleteJob(JOB_NAME, GROUP_NAME);
             Trigger trigger = new SimpleTrigger("testBackgroundJob_trigger", jobDetail.getGroup(), SimpleTrigger.REPEAT_INDEFINITELY, 3000);
+            // After Jahia 8.2.4.0 the deleteJob method can be used as the following to delete the job instead of accessing to the scheduler
+            // schedulerService.deleteJob(jobDetail);
             schedulerService.getScheduler().scheduleJob(jobDetail, trigger);
             logger.info("Simple background {} job registered", jobDetail.getName());
         }
