@@ -34,20 +34,20 @@ When creating such tickets, try to provide details about complexity of such an i
 
 ## Checklist
 
-This checklist is there to help you but is not exaustive, if some items are not relevant or should be added, [please request a change](https://github.com/Jahia/.github/blob/master/.github/ISSUE_TEMPLATE/custom_product/tech-day.md).
+This checklist is there to help you but is not exaustive, if some items are not relevant or should be added, [please request a change](https://github.com/Jahia/.github/blob/main/.github/ISSUE_TEMPLATE/custom_product/tech-day.md).
 
 ### General
 - [ ] 🚨 I reviewed all OPEN tickets planned for an upcoming release (using codebase-X.Y.Z milestone)
 - [ ] 🚨 I reviewed older tech day tickets / ownership activities for that codebase
 - [ ] 🔝 I submitted updates to the [tech-day template](https://github.com/Jahia/.github/blob/maintain-list/.github/ISSUE_TEMPLATE/custom_product/tech-day.md) if I noticed incorrect elements
 - [ ] 🟠 Standards have been discussed in a tech kumite in the past semester
-- [ ] 🙏 Module's license is up-to-date (see https://github.com/Jahia/open-source/blob/master/README.md#licenses)
+- [ ] 🙏 Module's license is up-to-date (see https://github.com/Jahia/open-source/blob/main/README.md#licenses)
 ### Dependency management
 - [ ] 🔝 I've identified the process/tools to handle dependency updates (ex: [renovate](https://jahia-confluence.atlassian.net/wiki/spaces/PR/pages/2071358/3rd-party+libraries+-+Ref+ISPOL08.A14024#%5BinlineExtension%5DRenovate))
 - [ ] 🟠 Ensure licenses used by the libraries are [Jahia compliant](https://jahia-confluence.atlassian.net/wiki/spaces/PR/pages/2068350/License+check+-+Ref+ISSOP08.A14020)
 - [ ] 🙏 Remove unused libraries
 ### Jahia Modules
-- [ ] 🚨 If the codebase is a module shipped with the distribution, the latest version with changes is configured in jahia-pack ([core](https://github.com/Jahia/jahia-pack-private/blob/master/core-modules/pom.xml) or [additional-modules](https://github.com/Jahia/jahia-pack-private/blob/master/additional-modules/pom.xml))
+- [ ] 🚨 If the codebase is a module shipped with the distribution, the latest version with changes is configured in jahia-pack ([core](https://github.com/Jahia/jahia-pack-private/blob/main/core-modules/pom.xml) or [additional-modules](https://github.com/Jahia/jahia-pack-private/blob/main/additional-modules/pom.xml))
 - [ ] 🟠 Make sure dependencies (and appropriate version if needed) are declared in **jahia-depends**
 ### Static Analysis and code quality
 - [ ] 🚨 No Blocker issues on [Sonarqube](https://sonarqube.jahia.com/projects) for the module
@@ -57,7 +57,7 @@ This checklist is there to help you but is not exaustive, if some items are not 
 - [ ] 🟠 I reviewed opportunities to remove dead/unused/unreachable code
 - [ ] 🙏 No Minor/Info issues on [Sonarqube](https://sonarqube.jahia.com/projects) for the module
 ### Javascript
-- [ ] 🔝 The module's webpack config is correct ([sample](https://github.com/Jahia/jcontent/blob/master/webpack.config.js))
+- [ ] 🔝 The module's webpack config is correct ([sample](https://github.com/Jahia/jcontent/blob/main/webpack.config.js))
 - [ ] 🔝 The module is using a supported LTS version of ([NodeJS](https://nodejs.org/en/about/previous-releases))
 - [ ] 🟠 The module is using React v18+
 - [ ] 🟠 The module is using Moonstone v2+
@@ -83,7 +83,7 @@ This checklist is there to help you but is not exaustive, if some items are not 
 - [ ] 🔝 Automated tests are using jahia-cypress for all utils functions
 - [ ] 🔝 The test framework is using page-object models published by other modules
 - [ ] 🔝 The test framework is publishing its own page-object models for use by others
-- [ ] 🟠 A manual-run workflow is available (ex: [manual-run.yml](https://github.com/Jahia/jcontent/blob/master/.github/workflows/manual-run.yml))
+- [ ] 🟠 A manual-run workflow is available (ex: [manual-run.yml](https://github.com/Jahia/jcontent/blob/main/.github/workflows/manual-run.yml))
 - [ ] 🟠 Instructions and [test cases](https://jahia.testrail.net/index.php?/dashboard) are available to document how a release should be tested (how to do the "sanity check" of this module)
 - [ ] 🙏 Automated tests are using a recent version of Cypress
 - [ ] 🙏 Automated tests are only relying on supported modules
