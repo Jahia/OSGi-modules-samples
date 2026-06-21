@@ -4,6 +4,7 @@ about: Create a security checklist
 title: ''
 type: Task
 projects: ["Jahia/22"]
+labels: ['security-checks', 'Area:Security']
 ---
 
 > [!TIP]
