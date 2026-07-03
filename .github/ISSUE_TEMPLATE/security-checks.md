@@ -13,6 +13,9 @@ labels: ['security-checks', 'Area:Security']
 > **When:** At the best time decided by the team and in all cases before the release.
 >
 > **TL;DR:** Fill in the feature summary, go through each of the 6 STRIDE sections, check off items (or mark N/A), document outcomes, and create issues for anything High or Critical. If your feature has no new inputs, APIs, data access, or permission changes, document why and close.
+> 
+> **AI agent:** We suggest delegating the first review to a [Security architect agent](https://github.com/msitarzewski/agency-agents/blob/main/security/security-architect.md) with a prompt similar to this:
+> > In the context of our security due diligence at Jahia (we're a software editor), we are performing a security review when tackling an Epic, this review is organized via a dedicated issue (link), I would like you to guide me through filling this document, one step at a time and provide the answer as a comment to this issue. Main is the current release, this epic was implemented between the xxx tag and the current state of main.
 ---
 ### How to Use This Checklist
 1. Fill in the **Feature Summary** section below first.
