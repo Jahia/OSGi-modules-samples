@@ -82,3 +82,4 @@ After Testing
 - [ ] The [modules releases log page](https://edit.jahia.com/jahia/jcontent/academy/en/pages/home/customer-center/jahia/release-notes/modules-releases-log?params=(sub:!f)) on the Academy was updated
 - [ ] A message was published on slack #releases channel
 - [ ] The milestone on GitHub was closed
+- [ ] The GitHub Release is not in Draft anymore and does contain the changelog
