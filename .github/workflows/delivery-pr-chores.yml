@@ -11,9 +11,14 @@ on:
       - synchronize
       - labeled
       - unlabeled
+      - review_requested
   pull_request_review:
 
 jobs:
   WF:
     uses: Jahia/jahia-modules-action/.github/workflows/reusable-delivery-pr-chores.yml@v2
+    permissions:
+      pull-requests: write
+      contents: read
+      id-token: write
     secrets: inherit
