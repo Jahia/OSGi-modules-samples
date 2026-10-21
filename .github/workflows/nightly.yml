@@ -13,7 +13,7 @@ jobs:
     with:
       jahia_image: ghcr.io/jahia/jahia-ee-dev:8-SNAPSHOT
       module_id: OSGi-modules-samples
-      should_skip_testrail: true
+      testrail_project: OSGI Modules Samples
       incident_service: OSGi-modules-samples-JahiaSN
       provisioning_manifest: provisioning-manifest-snapshot.yml
       artifact_prefix: osgi-sample-jahia-sn
@@ -26,7 +26,7 @@ jobs:
     with:
       jahia_image: jahia/jahia-ee:8
       module_id: OSGi-modules-samples
-      should_skip_testrail: true
+      testrail_project: OSGI Modules Samples
       incident_service: OSGi-modules-samples-JahiaRL
       provisioning_manifest: provisioning-manifest-snapshot.yml
       artifact_prefix: osgi-sample-jahia-rl
