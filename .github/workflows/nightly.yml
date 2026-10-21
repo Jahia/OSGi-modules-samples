@@ -22,7 +22,7 @@ jobs:
       - uses: jahia/jahia-modules-action/integration-tests@v2
         with:
           module_id: OSGi-modules-samples
-          jahia_image: jahia/jahia-ee-dev:8-SNAPSHOT
+          jahia_image: ghcr.io/jahia/jahia-ee-dev:8-SNAPSHOT
           incident_service: OSGi-modules-samples-JahiaSN          
           timeout_minutes: 20
           tests_manifest: provisioning-manifest-snapshot.yml
@@ -36,8 +36,18 @@ jobs:
           jahia_artifact_name: osgi-sample-jahia-sn-${{ github.run_number }}          
           bastion_ssh_private_key: ${{ secrets.BASTION_SSH_PRIVATE_KEY_JAHIACI }}
           jahia_license: ${{ secrets.JAHIA_LICENSE_8X_FULL }}
-          docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker_registries: |
+            [
+              {
+                "registry": "ghcr.io",
+                "username": "${{ secrets.GH_PACKAGES_USERNAME }}",
+                "password": "${{ secrets.GH_PACKAGES_TOKEN }}"
+              },
+              {
+                "username": "${{ secrets.DOCKERHUB_USERNAME }}",
+                "password": "${{ secrets.DOCKERHUB_PASSWORD }}"
+              }
+            ]
           nexus_username: ${{ secrets.NEXUS_USERNAME }}
           nexus_password: ${{ secrets.NEXUS_PASSWORD }}
           testrail_username: ${{ secrets.TESTRAIL_USERNAME }}
@@ -89,8 +99,18 @@ jobs:
           jahia_artifact_name: osgi-sample-jahia-rl-${{ github.run_number }}   
           bastion_ssh_private_key: ${{ secrets.BASTION_SSH_PRIVATE_KEY_JAHIACI }}
           jahia_license: ${{ secrets.JAHIA_LICENSE_8X_FULL }}
-          docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker_registries: |
+            [
+              {
+                "registry": "ghcr.io",
+                "username": "${{ secrets.GH_PACKAGES_USERNAME }}",
+                "password": "${{ secrets.GH_PACKAGES_TOKEN }}"
+              },
+              {
+                "username": "${{ secrets.DOCKERHUB_USERNAME }}",
+                "password": "${{ secrets.DOCKERHUB_PASSWORD }}"
+              }
+            ]
           nexus_username: ${{ secrets.NEXUS_USERNAME }}
           nexus_password: ${{ secrets.NEXUS_PASSWORD }}
           testrail_username: ${{ secrets.TESTRAIL_USERNAME }}

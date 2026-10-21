@@ -52,14 +52,24 @@ jobs:
         with:
           module_id: OSGi-modules-samples
           tests_manifest: provisioning-manifest-build.yml
-          jahia_image: jahia/jahia-ee-dev:8-SNAPSHOT
+          jahia_image: ghcr.io/jahia/jahia-ee-dev:8-SNAPSHOT
           should_use_build_artifacts: true
           should_skip_testrail: true
           github_token: ${{ secrets.GH_ISSUES_PRS_CHORES }}
           github_artifact_name: pat-standalone-artifacts-${{ github.run_number }}
           jahia_license: ${{ secrets.JAHIA_LICENSE_8X_FULL }}
-          docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
-          docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+          docker_registries: |
+            [
+              {
+                "registry": "ghcr.io",
+                "username": "${{ secrets.GH_PACKAGES_USERNAME }}",
+                "password": "${{ secrets.GH_PACKAGES_TOKEN }}"
+              },
+              {
+                "username": "${{ secrets.DOCKERHUB_USERNAME }}",
+                "password": "${{ secrets.DOCKERHUB_PASSWORD }}"
+              }
+            ]
           nexus_username: ${{ secrets.NEXUS_USERNAME }}
           nexus_password: ${{ secrets.NEXUS_PASSWORD }}
           tests_report_name: Test report (Standalone)
