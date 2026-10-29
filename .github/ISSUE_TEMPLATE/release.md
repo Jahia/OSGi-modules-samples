@@ -45,9 +45,10 @@ The following combinations should be validated:
 
 <h2 id="prepare-checklist">:pencil2: Prepare checklist</h2>
 
-- [ ] All other tickets within that milestone are are closed
+- [ ] All other tickets within that milestone are closed
 - [ ] Testing matrix and Minimum Jahia version are detailed
 - [ ] Jahia-parent (minimum Jahia version) was updated if requested in the ticket
+- [ ] Chachalog PR has been verified and merged
 - [ ] Release creation has been triggered from the Github Release UI ([detailed documentation](https://jahia-confluence.atlassian.net/wiki/spaces/PR/pages/2064804/Releasing+a+module#Releasingamodule-ReleasingwithGithub))
 
 <h2 id="tests-checklist">:vertical_traffic_light: Tests checklist</h2>
