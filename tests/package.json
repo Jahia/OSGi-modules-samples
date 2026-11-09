@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "e2e:ci": "cypress run",
+    "report:merge": "mochawesome-merge results/reports/cypress*.json > results/reports/report.json && rm results/reports/cypress*.json",
     "e2e:debug": "cypress open",
     "lint": "eslint . -c .eslintrc.json --ext .ts"
   },

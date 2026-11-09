@@ -70,7 +70,9 @@ fi
 
 echo "$(date +'%d %B %Y - %k:%M')== Run tests =="
 yarn e2e:ci
-if [[ $? -eq 0 ]]; then
+TESTS_EXIT_CODE=$?
+yarn report:merge
+if [[ $TESTS_EXIT_CODE -eq 0 ]]; then
   echo "success" > ./results/test_success
   exit 0
 else
