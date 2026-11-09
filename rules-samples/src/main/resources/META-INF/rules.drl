@@ -1,9 +1,8 @@
 package org.foo.modules.rules
 
-// list any import classes here.
+// list any import classes here. This is needed for OSGi to calculate the proper dependencies
 import org.jahia.services.content.rules.*
 import org.jahia.services.content.JCRContentUtils
-import org.jahia.services.content.JCRValueWrapper
 import org.slf4j.Logger
 
 global User user
@@ -14,15 +13,18 @@ global Service1 service1
 global Service2 service2
 
 rule "Hello bigText"
+    salience 100
     when
->        node: AddedNodeFact ( types contains "jnt:bigText" )
+        A new node is created
+        - the node has the type jnt:bigText
     then
->        service1.hello(node);
+        Say hello to node using service1
 end
 
 rule "Hello contentList"
     when
->        node: AddedNodeFact (types contains "jnt:contentList")
+        A new node is created
+        - the node has the type jnt:contentList
     then
->        service2.hello(node);
+        Say hello to node using service2
 end

@@ -17,6 +17,12 @@
     <name>Jahia Rules samples</name>
     <description>This is a module with Rules samples</description>
 
+    <properties>
+        <!-- This property is important we declare that we want to export our package that contains our services, -->
+        <!-- we could provide multiple package if needed to do so just separate them with a comma. -->
+        <export-package>org.foo.modules.rules</export-package>
+    </properties>
+
     <scm>
         <connection>scm:git:git@github.com:Jahia/OSGi-modules-samples.git</connection>
         <developerConnection>scm:git:git@github.com:Jahia/OSGi-modules-samples.git</developerConnection>
