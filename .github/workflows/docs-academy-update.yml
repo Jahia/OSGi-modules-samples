@@ -16,4 +16,7 @@ on:
 jobs:
   WF:
     uses: Jahia/jahia-modules-action/.github/workflows/reusable-academy-update.yml@v2
+    permissions:
+      contents: read
+      id-token: write
     secrets: inherit
