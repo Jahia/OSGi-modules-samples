@@ -15,4 +15,7 @@ jobs:
   WF:
     if: ${{ github.event_name == 'workflow_dispatch' || !github.event.release.prerelease }}
     uses: Jahia/jahia-modules-action/.github/workflows/reusable-academy-publish.yml@v2
+    permissions:
+      contents: read
+      id-token: write
     secrets: inherit
